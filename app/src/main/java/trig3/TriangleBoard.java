@@ -28,21 +28,40 @@ public class TriangleBoard {
 
         }
 
-
     }
 
-    public boolean spawnTrig(){
-        //go over each row
-        //if  cell add index to a list
-        //if empty array then return false
-        //pick random in list
-        //add randomly 3 or 9 at the index
-        //return true
+    public boolean spawnTrig() {
+        // go over each row
+        List<int[]> spawnPoints = new ArrayList<>();
+        for (int row = 0; row < board.size(); row++) {
+            List<Integer> rowList = board.get(row);
+            for (int column = 0; column < rowList.size(); column++) {
+                // if cell empty add index to a list
+                if (rowList.get(column) == EMPTY) {
+                    spawnPoints.add(new int[] { row, column });
+                }
 
-        return false;
+            }
+
+        }
+        // if empty array then return false
+        if (spawnPoints.size() == 0)
+            return false;
+        // pick random in list
+        int[] spawnLocation = spawnPoints.get(random.nextInt(spawnPoints.size()));
+
+        // add randomly 3 or 9 at the index
+        int toAdd = random.nextInt(2);
+        if (toAdd == 0)
+            toAdd = 3;
+        else
+            toAdd = 9;
+        // return true
+        int spawnRow = spawnLocation[0];
+        int spawnCol = spawnLocation[1];
+        board.get(spawnRow).set(spawnCol, toAdd);
+        return true;
     }
-
-
 
     public void printBoard() {
         System.out.println();

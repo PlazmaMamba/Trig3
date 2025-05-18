@@ -11,5 +11,25 @@ public class App {
     public static void main(String[] args) {
         TriangleBoard board = new TriangleBoard(5);
         board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
+        board.spawnTrig();
+        board.printBoard();
     }
 }
